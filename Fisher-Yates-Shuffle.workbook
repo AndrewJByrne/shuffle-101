@@ -1,0 +1,77 @@
+---
+uti: com.xamarin.workbook
+platforms:
+- Console
+---
+
+# Fisher-Yates Shuffle
+
+Implementation of the Fisher-Yates shuffle algorithm.  As explained in the [Wikipedia](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle "Fisher-Yates Wikipedia") page about this algorithm, the idea is to put all the elements into a hat; the algorithm continually determines the next element by randomly drawing an element from the hat until no elements remain. See the Up-For-Grabs section below for some suggestions and considerations on how to improve this algorithm.  For a better shuffling algorithm, check out the [Knuth-Durstenfeld workbook](https://github.com/andrewjbyrne/shuffle-101 "Shuffle 101").
+
+```csharp
+string[] shuffle(string[] input) {
+    string[] output = new string[input.Length]; // My shuffled list
+    Random rand = new Random(); // Random Number Generator
+
+    // While I still have something to shuffle ...
+    for (int N = input.Length; N > 0; N--) {
+
+        // Pick an item randomly from our data set
+        int K = rand.Next(N);
+
+        // Add to our shuffled array
+        output[N-1] = input[K];
+
+        // Shrink my data set by 1, removing shuffled item
+        string[] smaller = new string[N-1];
+        int j = 0;
+        for (int i = 0; i < N; i++) {
+            if (i == K)
+                continue;
+            smaller[j] = input[i];
+            j++;
+        }
+        input = smaller;
+    }
+    
+    return output;
+}
+```
+
+# Test Data
+
+Let’s define a list of things to shuffle.  As in the lesson, we’ll shuffle my paylist of 4 songs.  The following code creates the array of songs, with songs titled “A”, “B”, “C”, “D”. Feel free to increase the number of songs in the list, change the list to a list of playing cards, tasks or whatever else you fancy.
+
+```csharp
+string[] songs = new string[4] {"A", "B", "C", "D"};
+```
+
+# Run
+
+```csharp
+shuffle(songs);
+```
+
+# Next Steps
+
+## Up-For-Grabs
+
+The above implentation serves to illustrate the genera idea of the Fisher-Yates method for shuffling a data set into a random permutation.  Here are some ideas for ways to improve the algorithm.
+
+* This method handles arrays of strings. What if we made it generic, by handling arrays of type T ? In this case, the method signature would be as follows:
+
+   `T[] shuffle(T[] input)`
+
+* The unbiased results of this algorithm are only as good as the unbiased, even distrubution of random numbers being used. We’re using the `Random`  class, which is a Pseudo-Random Number Generator (PRNG). One enhancement might be to add a seed to the constructor and see what impact that has on the randomness of the output. 
+
+* If the shuffle method didn’t use a C# Array, what structures coudl we use to make it more efficient. The shrinking of the array is an expensive operation!
+
+* Test the algorithm with a larger data set. To help you, check out my helper.workbook in this repo. It contains two methods `CreateArray` and 
+
+# More Info
+
+\[Add link to original MIX\]
+
+\[ Add links to other workbooks in this series\]
+
+# Reference
