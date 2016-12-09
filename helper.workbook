@@ -4,3 +4,81 @@ platforms:
 - Console
 ---
 
+# Helper Methods
+
+```csharp
+using System.Diagnostics;
+```
+
+The following method will generate an int array of numbers between `fromNumber` and `toNumber`.
+
+```csharp
+int[] CreateArray(int fromNumber, int toNumber, bool inclusive) {
+    var sw = new Stopwatch();
+    sw.Start();
+    // Assuming the numbers are contiguous, we know the length of the array by subtracting one from the other. 
+    // For example, from = 3 to = 7 => 7-3 = array of length 4 (3,4,5,6). Inclusive would ean to-from+1
+    int arrayLength = (inclusive) ? toNumber - fromNumber + 1: toNumber - fromNumber;
+    int[] newArray = new int[arrayLength];
+    for (int i = 0; i < arrayLength; i++) {
+        newArray[i] = (i+fromNumber);
+    }
+    sw.Stop();
+    Console.WriteLine(sw.Elapsed.TotalMilliseconds.ToString());
+    return newArray;
+    
+}
+```
+
+Up-For-Grabs
+
+* Improve the preceding function such that it is generic. 
+
+* Consider using a different data structure to create the arrays.
+
+This next method will call a shuffle function `numRuns `times and output how many times each permutation of elements in the array occurs. Obviously, for an unbiased shuffling algorithm, we’d expect for a large number of runs the distribution to be even across all permutations.
+
+```csharp
+// This method will count how many times a number occurs
+
+void DisplayNumOccurrences(int[] test, int numRuns) {
+
+    Dictionary<string, int> results = new Dictionary<string, int>();
+
+    //Console.WriteLine(numRuns);
+
+    for (int i = 0; i < numRuns; i++) {
+
+        // Note; shuffle is not defined in this workbook. You can copy this method to one
+        // of the shuffle algorithm workbooks to run it. 
+        int[] outArray = shuffle(test);
+
+        string outArrayAsString = String.Join(",",outArray);
+
+        if (results.ContainsKey(outArrayAsString)){
+
+            results[outArrayAsString]++;
+
+        }
+
+        else {
+
+            results.Add(outArrayAsString,1);
+
+        }
+
+    }
+
+
+    foreach(var res in results) {
+
+        Console.WriteLine("Pattern: " + res.Key + " Count:  " + res.Value);
+
+    }
+
+}
+```
+
+Up For Grabs
+
+* Rather than hard-code a shuffle function into thsi method, consider using C# delegates and have more flexibility by passing in a delegate as a parameter.

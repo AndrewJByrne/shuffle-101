@@ -6,14 +6,17 @@ platforms:
 
 # Knuth Shuffle
 
+Implementation of the Knuth Shuffle algorithm. First described in the 1960s, this algorithm improves on the Fisher-Yates algorithm by shuffling element of an array in-place, without the use of extra space.
+
 ```csharp
 string[] shuffle(string[] input) {
     Random rand = new Random(); // Random Number Generator
     int k; // Index of the next randomly selected, unshuffled item
     string tmp; // Variable used during the swapping of elements
 
+    // Iterate from back to front. It will work iterating front to back too. 
     for (int n = input.Length - 1; n >= 0; n--) {
-        k = rand.Next(n+1);
+        k = rand.Next(n+1);  
 
         // swap
         tmp = input[n];
@@ -25,11 +28,40 @@ string[] shuffle(string[] input) {
 }
 ```
 
+# Test Data
+
+Let’s define a list of things to shuffle.  As in the lesson, we’ll shuffle my playlist of 4 songs.  The following code creates the array of songs, with songs titled “A”, “B”, “C”, “D”. Feel free to increase the number of songs in the list, change the list to a list of playing cards, tasks or whatever else you fancy.
+
 ```csharp
 string[] songs = new string[4] {"A", "B", "C", "D"};
 ```
+
+
+
+Call our shuffle method and pass in our data array. When you run this cell, the results will be displayed below.
 
 ```csharp
 shuffle(songs);
 ```
 
+# Next Steps
+
+## Up-For-Grabs
+
+The above implentation serves to illustrate the genera idea of the Fisher-Yates method for shuffling a data set into a random permutation.  Here are some ideas for ways to improve the algorithm.
+
+* This method handles arrays of strings. What if we made it generic, by handling arrays of type T ? In this case, the method signature would be as follows:
+
+  `T[] shuffle(T[] input)`
+
+* The unbiased results of this algorithm are only as good as the unbiased, even distrubution of random numbers being used. We’re using the `Random`  class, which is a Pseudo-Random Number Generator (PRNG). One enhancement might be to add a seed to the constructor and see what impact that has on the randomness of the output.
+
+* Test the algorithm with a larger data set. To help you, check out my helper.workbook in this repo. It contains two methods `CreateArray` and `DisplayNumOccurrences`. You will need to copy those methods into the individual algorithm workbooks to see them in action. I suggestion trying to run the algorithms with arrays larger than 100000 entries. 
+
+# More Info
+
+[Shuffle 101 Office Mix course](https://mix.office.com/watch/1l1vid2vugxve "Shuffle 101 mix course")
+
+Fisher-Yates workbook
+
+[@AndrewJByrne](https://twitter.com/amdrewjbyrne)
