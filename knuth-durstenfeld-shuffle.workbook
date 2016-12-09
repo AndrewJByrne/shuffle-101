@@ -4,3 +4,32 @@ platforms:
 - Console
 ---
 
+# Knuth Shuffle
+
+```csharp
+string[] shuffle(string[] input) {
+    Random rand = new Random(); // Random Number Generator
+    int k; // Index of the next randomly selected, unshuffled item
+    string tmp; // Variable used during the swapping of elements
+
+    for (int n = input.Length - 1; n >= 0; n--) {
+        k = rand.Next(n+1);
+
+        // swap
+        tmp = input[n];
+        input[n] = input[k];
+        input[k] = tmp;
+    }
+
+    return input;
+}
+```
+
+```csharp
+string[] songs = new string[4] {"A", "B", "C", "D"};
+```
+
+```csharp
+shuffle(songs);
+```
+
