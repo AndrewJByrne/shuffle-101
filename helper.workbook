@@ -81,4 +81,4 @@ void DisplayNumOccurrences(int[] test, int numRuns) {
 
 Up For Grabs
 
-* Rather than hard-code a shuffle function into thsi method, consider using C# delegates and have more flexibility by passing in a delegate as a parameter.
+* Rather than hard-code a shuffle function into this method, consider using C# delegates and have more flexibility by passing in a delegate as a parameter.
