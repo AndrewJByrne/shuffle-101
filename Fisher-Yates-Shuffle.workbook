@@ -68,7 +68,7 @@ The above implentation serves to illustrate the genera idea of the Fisher-Yates 
 
 * If the shuffle method didn’t use a C# Array, what structures could we use to make it more efficient. The shrinking of the array is an expensive operation!
 
-* Test the algorithm with a larger data set. To help you, check out my helper.workbook in this repo. It contains two methods `CreateArray` and `DisplayNumOccurrences`. You will need to copy those methods into the individual algorithm workbooks to see them in action. I suggestion trying to run the algorithms with arrays larger than 100000 entries. 
+* Test the algorithm with a larger data set. To help you, check out my helper.workbook in this repo. It contains two methods `CreateArray` and `DisplayNumOccurrences`. You will need to copy those methods into the individual algorithm workbooks to see them in action. I suggestion trying to run the algorithms with arrays larger than 100000 entries.
 
 # More Info
 

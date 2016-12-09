@@ -36,8 +36,6 @@ Let’s define a list of things to shuffle.  As in the lesson, we’ll shuffle 
 string[] songs = new string[4] {"A", "B", "C", "D"};
 ```
 
-
-
 Call our shuffle method and pass in our data array. When you run this cell, the results will be displayed below.
 
 ```csharp
@@ -56,7 +54,7 @@ The above implentation serves to illustrate the genera idea of the Fisher-Yates 
 
 * The unbiased results of this algorithm are only as good as the unbiased, even distrubution of random numbers being used. We’re using the `Random`  class, which is a Pseudo-Random Number Generator (PRNG). One enhancement might be to add a seed to the constructor and see what impact that has on the randomness of the output.
 
-* Test the algorithm with a larger data set. To help you, check out my helper.workbook in this repo. It contains two methods `CreateArray` and `DisplayNumOccurrences`. You will need to copy those methods into the individual algorithm workbooks to see them in action. I suggestion trying to run the algorithms with arrays larger than 100000 entries. 
+* Test the algorithm with a larger data set. To help you, check out my helper.workbook in this repo. It contains two methods `CreateArray` and `DisplayNumOccurrences`. You will need to copy those methods into the individual algorithm workbooks to see them in action. I suggestion trying to run the algorithms with arrays larger than 100000 entries.
 
 # More Info
 
