@@ -7,6 +7,9 @@ Xamarin Workbooks is a interactive environment for playing with code and explori
 
 In Shuffle 101, I cover the background of the Fisher-Yates algorithm, describe its pros and cons and then illustrate the Knuth algorithm, a derivation of the original that solves two of the key limitations found in the original. You can use the workbooks found here to examine reference implementataions of both. Using the methods found in the Helper workbook, you can create test arrays and the see how the algorithms perform. 
 
+
+![Screenshot of Shuffle 101 class](https://github.com/AndrewJByrne/shuffle-101/blob/master/screenshots/title-screen.PNG)
+
 # Table Of Contents
 [Fisher-Yates Shuffle](https://github.com/AndrewJByrne/shuffle-101/blob/master/Fisher-Yates-Shuffle.workbook)
 
