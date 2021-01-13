@@ -31,7 +31,7 @@ The following resources were consulted and used in the course of making this con
 
 [Wikipedia: Fisher-Yates Shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
 
-[Follow my on Twitter @AndrewJByrne](https://www.twitter.com/andrewjbyrne)
+[Follow me on Twitter @AndrewJByrne](https://www.twitter.com/andrewjbyrne)
 
 # Copyright
 @Copyright 2016 Andrew J Byrne
